@@ -1,5 +1,19 @@
 # Implement Config Server with services
 
+- Config-service
+
+```properties
+spring.application.name=config-server
+server.port=8012
+
+spring.cloud.config.server.git.uri=https://github.com/javaHelper/spring-boot-microservices-workshop
+spring.cloud.config.server.git.search-paths=stock-records-cconfig
+spring.cloud.config.server.git.clone-on-start=true
+spring.cloud.config.server.git.default-label=main
+spring.cloud.config.server.git.force-pull=true
+
+```
+
 GET ->
 ```
 curl --location --request GET 'localhost:8012/config-service/properties'
