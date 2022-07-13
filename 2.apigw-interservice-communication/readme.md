@@ -1,5 +1,26 @@
 # Inter-service communication using APIGW and Feign Client
 
+- apigw-service
+
+application.properties
+
+```properties
+#
+spring.application.name=gateway-service
+server.port=8011
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+
+spring.cloud.gateway.discovery.locator.enabled=true
+spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+
+spring.cloud.gateway.routes[0].id=stock-service
+spring.cloud.gateway.routes[0].uri=lb://stock-service
+spring.cloud.gateway.routes[0].predicates[0]=Path=/stock-service/stocks/**
+spring.cloud.gateway.routes[0].predicates[1]=Method=GET
+spring.cloud.gateway.routes[0].filters[0]=RemoveRequestHeader=Cookie
+```
+
+
 - Eureka: http://localhost:8761/
 
 <img width="1504" alt="Screenshot 2022-07-13 at 11 11 44 PM" src="https://user-images.githubusercontent.com/54174687/178796806-068c01ca-33b7-45f1-aaff-cc87cd2e293c.png">
