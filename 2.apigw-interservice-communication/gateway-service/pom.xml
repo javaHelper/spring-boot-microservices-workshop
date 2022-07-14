@@ -9,15 +9,17 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>organization-service</artifactId>
+	<artifactId>gateway-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gateway-service</name>
 	<description>Demo project for Spring Boot</description>
+    
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
-	<dependencies>
+	
+    <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -51,6 +53,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+    
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
